@@ -1,4 +1,3 @@
 #!/bin/bash
 
-python3 conkas.py
-
+python3 conkas.py "$@"
