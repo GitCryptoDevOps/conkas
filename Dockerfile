@@ -17,9 +17,9 @@ WORKDIR /conkas
 
 RUN pip3 install -r requirements.txt
 
-RUN python3 -m solcx.install v0.4.25
-RUN python3 -m solcx.install v0.4.26
-RUN python3 -m solcx.install v0.5.17
-RUN python3 -m solcx.install v0.6.11
+RUN pip3 install solc-select
+COPY ./install-solc.sh .
+RUN ./install-solc.sh
+COPY ./conkas.sh /usr/local/bin/conkas
 
-ENTRYPOINT ["python3", "conkas.py"]
+#ENTRYPOINT ["python3", "conkas.py"]
